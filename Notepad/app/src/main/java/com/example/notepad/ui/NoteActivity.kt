@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.content_notepad.*
 
 class NoteActivity : AppCompatActivity() {
 
-//        private lateinit var noteViewModel: NoteViewModel
     private val noteViewModel: NoteViewModel by viewModels() // Use viewModels because of lazy
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +33,6 @@ class NoteActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-//        noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java) // Instantiate the note viewholder
-
         noteViewModel.note.observe(this, Observer { note ->
             if (note != null) {
                 tvTitle.text = note.noteTitle
