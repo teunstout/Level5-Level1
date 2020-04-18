@@ -17,7 +17,7 @@ class NoteRepository(context: Context) {
         return noteDao.getNote()
     }
 
-    suspend fun updateNotepad(note: Note) {
+    suspend fun updateNote(note: Note) {
         noteDao.updateNote(note)
     }
 

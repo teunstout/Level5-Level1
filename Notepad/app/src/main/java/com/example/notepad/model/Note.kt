@@ -7,9 +7,9 @@ import java.util.*
 
 @Entity()
 data class Note(
-    val noteTitle: String,
-    val lastUpdated: Date,
-    val noteText: String,
+    var noteTitle: String,
+    var lastUpdated: Date,
+    var noteText: String,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

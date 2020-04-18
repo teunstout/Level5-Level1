@@ -7,10 +7,8 @@ import com.example.notepad.database.NoteRepository
 /**
  * All the business logic of Notepad Activity
  */
-class NoteViewholder(application: Application): AndroidViewModel(application) {
+class NoteViewModel(application: Application): AndroidViewModel(application) {
 
     private val noteRepository = NoteRepository(application.applicationContext) // Get note repository from application
     val note = noteRepository.getNotepad() // Get live data from the repository
-
-
 }

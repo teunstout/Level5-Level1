@@ -1,21 +1,22 @@
 package com.example.notepad.ui
 
+
+
+
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.notepad.R
-import com.example.notepad.viewmodel.NoteViewholder
-
+import com.example.notepad.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.activity_notepad.*
-import kotlinx.android.synthetic.main.content_edit_notepad.*
 import kotlinx.android.synthetic.main.content_notepad.*
 
-class NotepadActivity : AppCompatActivity() {
+class NoteActivity : AppCompatActivity() {
 
-    //    private lateinit var noteViewholder: NoteViewholder
-    private val noteViewholder: NoteViewholder by viewModels()
+//        private lateinit var noteViewModel: NoteViewmodel
+    private val noteViewModel: NoteViewModel by viewModels() // Use viewModels because of lazy
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,17 +29,17 @@ class NotepadActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        fab.setOnClickListener {
+            val intent = Intent(this, EditNoteActivity::class.java)
+            intent.putExtra(EditNoteActivity.EXTRA_NOTE, noteViewModel.note.value)
+            startActivity(intent)
         }
     }
 
     private fun initViewModel() {
-//        noteViewholder = ViewModelProvider(this).get(NoteViewholder::class.java) // Instantiate the note viewholder
+//        noteViewmodel = ViewModelProvider(this).get(noteViewmodel::class.java) // Instantiate the note viewholder
 
-
-        noteViewholder.note.observe(this, Observer { note ->
+        noteViewModel.note.observe(this, Observer { note ->
             if (note != null) {
                 tvTitle.text = note.noteTitle
                 tvLastUpdated.text = getString(R.string.last_updated, note.lastUpdated.toString())
