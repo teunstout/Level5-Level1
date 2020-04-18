@@ -1,13 +1,11 @@
 package com.example.notepad.ui
 
-
-
-
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.notepad.R
 import com.example.notepad.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.activity_notepad.*
@@ -15,7 +13,7 @@ import kotlinx.android.synthetic.main.content_notepad.*
 
 class NoteActivity : AppCompatActivity() {
 
-//        private lateinit var noteViewModel: NoteViewmodel
+//        private lateinit var noteViewModel: NoteViewModel
     private val noteViewModel: NoteViewModel by viewModels() // Use viewModels because of lazy
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +23,6 @@ class NoteActivity : AppCompatActivity() {
 
         initViews()
         initViewModel()
-
     }
 
     private fun initViews() {
@@ -37,7 +34,7 @@ class NoteActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-//        noteViewmodel = ViewModelProvider(this).get(noteViewmodel::class.java) // Instantiate the note viewholder
+//        noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java) // Instantiate the note viewholder
 
         noteViewModel.note.observe(this, Observer { note ->
             if (note != null) {
