@@ -4,14 +4,13 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.observe
+import androidx.lifecycle.Observer
 import com.example.notepad.R
 import com.example.notepad.viewmodel.NoteViewholder
 
 import kotlinx.android.synthetic.main.activity_notepad.*
 import kotlinx.android.synthetic.main.content_edit_notepad.*
 import kotlinx.android.synthetic.main.content_notepad.*
-import java.util.Observer
 
 class NotepadActivity : AppCompatActivity() {
 

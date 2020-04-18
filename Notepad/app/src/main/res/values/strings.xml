@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Notepad</string>
     <string name="app_edit_name">Edit Notepad</string>
-    <string name="my_personal_notepad">My Personal Notepad</string>
     <string name="last_updated">Last Updated %s</string>
 </resources>
