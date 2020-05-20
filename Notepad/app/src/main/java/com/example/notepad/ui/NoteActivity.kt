@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.notepad.R
 import com.example.notepad.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.activity_notepad.*

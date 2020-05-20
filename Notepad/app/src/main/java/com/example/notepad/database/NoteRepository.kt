@@ -13,12 +13,7 @@ class NoteRepository(context: Context) {
         noteDao = database!!.noteDao()
     }
 
-    fun getNotepad(): LiveData<Note?> {
-        return noteDao.getNote()
-    }
+    fun getNotepad(): LiveData<Note?> = noteDao.getNote()
 
-    suspend fun updateNote(note: Note) {
-        noteDao.updateNote(note)
-    }
-
+    suspend fun updateNote(note: Note) = noteDao.updateNote(note)
 }
